@@ -44,6 +44,8 @@ let inViewport = function(elem) {
  * Begin Main Functions
  *
 */
+
+// Set sections as active
 let menuLinks = [];
 
 function isActive() {
@@ -53,10 +55,10 @@ function isActive() {
     window.addEventListener('scroll', function(e) {
       if (inViewport(sections[i])) {
         section.classList.add('active');
-        // menuLinks[i].classList.add('menu__active');
+        menuLinks[i].classList.add('menu__active');
       } else {
         section.classList.remove('active');
-        // menuLinks.classList.remove('menu__active');
+        menuLinks.classList.remove('menu__active');
       }
     })
   }
@@ -71,13 +73,12 @@ function buildNav() {
     a.textContent = iter.dataset.nav;
     a.classList.add('menu__link');
     a.href = '#'+ iter.id;
-    // li.onclick = onclickZ(i);
-    // li.onclick = scroll(i);
     li.appendChild(a);
     navBarList.appendChild(li);
   });
 };
 
+// Scroll to section on link click
 function scroll() {
   const menuScroll = document.querySelectorAll('a');
   for (let i = 0; i <= sections.length; i++) {
@@ -98,11 +99,6 @@ function scroll() {
  *
 */
 
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
 
 function onDOMReady(callback) {
     if (document.readyState !== 'loading') {
@@ -119,7 +115,6 @@ function onDOMReady(callback) {
 }
 
 onDOMReady(function() {
-    // do something
     isActive();
     buildNav();
     scroll();
