@@ -46,23 +46,25 @@ let inViewport = function(elem) {
 */
 
 // Set sections as active
-let menuLinks = [];
+// let menuLinks = [];
 
-function isActive() {
-  menuLinks = document.querySelectorAll('.menu__link');
-  console.log(menuLinks);
-  for (const [i, section] of sections.entries()) {
-    window.addEventListener('scroll', function(e) {
-      if (inViewport(sections[i])) {
-        section.classList.add('active');
-        menuLinks[i].classList.add('menu__active');
-      } else {
-        section.classList.remove('active');
-        menuLinks.classList.remove('menu__active');
-      }
-    })
-  }
-};
+// function isActive() {
+//   menuLinks = document.querySelectorAll('.menu__link');
+//   console.log(menuLinks);
+//   for (const [i, section] of sections.entries()) {
+//     window.addEventListener('scroll', function(e) {
+//       if (inViewport(sections[i])) {
+//         section.classList.add('active');
+//         menuLinks[i].classList.add('menu__active');
+//       } else {
+//         section.classList.remove('active');
+//         menuLinks.classList.remove('menu__active');
+//       }
+//     })
+//     { once: true };
+//   }
+// };
+
 
 
 // build the nav
@@ -78,6 +80,7 @@ function buildNav() {
   });
 };
 
+
 // Scroll to section on link click
 function scroll() {
   const menuScroll = document.querySelectorAll('a');
@@ -91,6 +94,23 @@ function scroll() {
       })
     });
   }
+}
+
+function isActive () {
+  const menuLinks = document.querySelectorAll('.menu__link');
+    for (let i = 0; i <= sections.length; i++) {
+      window.addEventListener('scroll', function (e) {
+        e.preventDefault();
+        if (inViewport(sections[i])) {
+          sections[i].classList.add('active');
+          menuLinks[i].classList.add('menu__active');
+        } else {
+          sections[i].classList.remove('active');
+          menuLinks[i].classList.remove('menu__active');
+        }
+      })
+      {once: true}
+  };
 }
 
 /**
