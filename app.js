@@ -135,7 +135,9 @@ function onDOMReady(callback) {
 }
 
 onDOMReady(function() {
-    isActive();
+
     buildNav();
+    isActive();
     scroll();
+
 });

@@ -89,6 +89,12 @@ section {
   transition: ease 0.3s all;
 }
 
+a.menu__active {
+  background: rgba(136,203,171,1);
+  color: #fff;
+  transition: ease 0.3s all;
+}
+
 .navbar__menu .menu__link {
   display: block;
   float: right;
@@ -135,12 +141,12 @@ section {
   text-align: left;
 }
 
-@media only screen and (min-width: 35em){
+/* @media only screen and (min-width: 35em){
   .landing__container {
       max-width: 50em;
       padding: 4em;
   }
-}
+} */
 
 section:nth-of-type(even) .landing__container {
   margin-right: 0;
@@ -246,11 +252,122 @@ to {
 
 /* ---- Media Queries ---- */
 
-@media all and (min-width: 1024px) and (max-width: 1280px) { }
 
-@media all and (min-width: 480px) and (max-width: 768px) { }
+@media only screen and (min-width: 36em) and (max-width: 50em) {
+  /* Typeography General*/
+  h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+  }
 
-@media all and (max-width: 480px) {
+  h2 {
+    border-bottom: 1px solid #cc1;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 2em;
+    color: #fff;
+  }
+
+  p {
+    line-height: 1.6em;
+    color: #eee;
+    font-size: 1em;
+  }
+
+  /* ---- Layout Rules ---- */
+  main {
+    margin: 10vh 1em 10vh;
+  }
+
+  .main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+  }
+
+  section {
+    position: relative;
+    min-height: 5vh;
+  }
+
+  section {
+    position: relative;
+    min-height: 65vh;
+  }
+
+  .active {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+  }
+
+  .menu__active {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+  }
+
+  a.menu__active {
+    background: rgba(136,203,171,1);
+    color: #fff;
+    transition: ease 0.3s all;
+  }
+
+}
+
+@media only screen and (max-width: 35em) {
+  /* ---- Base Rules ---- */
+  body {
+    background: rgb(136,203,171);
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+  }
+
+
+  /* Typeography General*/
+  h1 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 3em;
+    margin: 2em 1rem;
+  }
+
+  /* @media only screen and (min-width: 35em){
+    h1 {
+        font-size: 7em;
+        margin: 2em 4rem 1em;
+    }
+  } */
+
+  h2 {
+    border-bottom: 1px solid #cc1;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 1em;
+    color: #fff;
+  }
+
+  p {
+    line-height: 1.6em;
+    color: #eee;
+    font-size: 0.6em;
+  }
+
+  /* ---- Layout Rules ---- */
+  main {
+    margin: 10vh 1em 10vh;
+  }
+
+  .main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+  }
+
+  section {
+    position: relative;
+    min-height: 50vh;
+  }
+
+
   /* Navigation Styles*/
   .navbar__menu ul {
     padding-left: 0;
@@ -264,8 +381,20 @@ to {
     display: inline-block;
   }
 
-  .menu__active {
+  .active {
     background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+  }
+
+  /* .menu__active {
+    background: #333;
+    color: #fff;
+    transition: ease 0.3s all;
+  } */
+
+  a.menu__active {
+    background: rgba(136,203,171,1);
     color: #fff;
     transition: ease 0.3s all;
   }
@@ -280,11 +409,11 @@ to {
     font-family: 'Oxygen', Sans-Serif;
   }
 
-  .navbar__menu .menu__link:hover {
+  /* .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
-  }
+  } */
 
   /* Header Styles */
   .page__header {
@@ -314,6 +443,7 @@ to {
   .landing__container {
     padding: 1em;
     text-align: left;
+    max-width: 40em;
   }
 
   @media only screen and (min-width: 35em){
